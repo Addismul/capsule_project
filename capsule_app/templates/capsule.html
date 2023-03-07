@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %} 
+    <div class = "container">
+      <br>
+      <h2 class = "text-center">Capsule List </h2> 
+      <br> 
+    </div>  
+    <div class="container mt-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name<th>
+                    <td> </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for capsule in all_capsules %}
+                <tr>
+                    <td>{{capsule.id}}</td>
+                    <td>{{capsule.name}}</td>
+                    <td>
+                    <a href="{{capsule.id}}"><input type="submit" value="See More" class="btn btn-success btn-sm" type="button"></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+ 
+{% endblock %}
